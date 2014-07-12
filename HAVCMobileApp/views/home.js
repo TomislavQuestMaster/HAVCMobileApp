@@ -13,30 +13,45 @@
     var brojProdanih = ko.observable(0);
     var brojBesplatnih = ko.observable(0);
     var brojGledatelja = ko.observable(0);
-    var brojprojekcija = ko.observable(0);
+    var brojProjekcija = ko.observable(0);
     var promet = ko.observable(0);
 
     var spremi = function () {
     }
 
     var dohvatiProgram = function () {
-        Application3.data.dohvatiProgram(kino()).done(function (popis) {
 
+        HAVCMobileApp.data.dohvatiProgram(kino()).done(function (popis) {
+
+            /*
             var popisFilmova = [];
 
             popis.forEach(function (film) {
                 popisFilmova.push({ imeFilma: film });
             });
+            */
 
-            popisPrograma(popisFilmova);
+            popisPrograma(popis);
         });
     }
+
+    kino("Dvorana Visia");
+    dohvatiProgram();
 
     var dohvatiPopisKina = function () {
         HAVCMobileApp.data.dohvatiKina(1).done(function (popis) {
-            popisKina(popis);
+
+            var svaKina = [];
+
+            popis.forEach(function (kino) {
+                svaKina.push(kino.ime);
+            });
+
+            popisKina(svaKina);
         });
     }
+
+    dohvatiPopisKina();
 
     return {
         kinoPrikazivac: kinoPrikazivac,
