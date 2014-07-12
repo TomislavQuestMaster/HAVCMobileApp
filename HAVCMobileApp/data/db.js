@@ -1,42 +1,105 @@
-﻿/// <reference path="../js/jquery-1.11.1.min.js" />
-/// <reference path="../js/knockout-3.1.0.js" />
-/// <reference path="../js/dx.all.js" />
+﻿window.HAVCMobileApp = window.HAVCMobileApp || {};
+window.HAVCMobileApp.data = window.HAVCMobileApp.data || {};
 
-(function() {
-    "use strict";
+/*
+var context = new DevExpress.data.ODataContext({
+    url: "http://services.odata.org/V3/Northwind/Northwind.svc",
+    errorHandler: function (error) {
+        alert(error.message);
+    },
+    entities: {
+        Products: {
+            key: "ProductID",
+            keyType: "Int32"
+        }
+    }
+});
+*/
 
-    HAVCMobileApp.db = {
-        "sampleData": new DevExpress.data.DataSource({
-            /// Implementation of load operation. Accepts a bag of "load options" (object) which are: sort, filter, group, select, skip, take. 
-            /// Must return array or promise(array).
-            load: function(loadOptions) {
-                return $.ajax("/data/sampleData.json");
-            },
-            /// User implementation of loading single item by key. Accepts key value.
-            /// Must return object or promise(object).
-            byKey: function(key) {
-                throw new Error("Not implemented");
-            },
-            /// User implementation of insertion. Accepts bag of data values. 
-            /// Return value is not required. If present must be key value or promise of key value.
-            insert: function(values) {
-                throw new Error("Not implemented");
-            },
-            /// User implementation of update. Accepts key and bag of data values (object key, object values). 
-            /// If returns promise, then considered async, otherwise return value is ignored.
-            update: function(key, values) {
-                throw new Error("Not implemented");
-            },
-            /// User implementation of remove. Accepts key value.
-            /// If returns promise, then considered async, otherwise return value is ignored.
-            remove: function(key) {
-                throw new Error("Not implemented");
-            },
-            /// User implementation of total count evaluation. Accepts arguments same as load. 
-            /// Must return Number or promise(Number)
-            totalCount: function(options) {
-                throw new Error("Not implemented");
+
+var popisKinoprikazivaca = [
+
+    {
+        id: 1,
+        kinoprikazivac: "Kinematografi Dubrovnik"
+    }
+];
+
+var popisKina = [
+
+    {
+        idVlasnika: 1,
+        ime: "Dvorana Visia",
+        program: ["filmA", "filmB"]
+    },
+    {
+        idVlasnika: 1,
+        ime: "Kino Sloboda",
+        program: ["filmA", "filmC"]
+    },
+    {
+        idVlasnika: 1,
+        ime: "Ljetno kino Jadran",
+        program: ["filmE", "filmB"]
+    },
+    {
+        idVlasnika: 2,
+        ime: "Cineplexx Osijek",
+        program: ["filmE", "filmB"]
+    }
+
+];
+
+$(function () {
+
+    //var store = new DevExpress.data.DataSource(context.Products);
+
+    var kinoPrikazivacDataSource = new DevExpress.data.DataSource(popisKinoprikazivaca);
+    var kinoDataSource = new DevExpress.data.DataSource(popisKina);
+
+    function dohvatiKina(idVlasnika) {
+
+        var deferred = $.Deferred();
+
+        kinoDataSource.filter("idVlasnika", "=", idVlasnika);
+        kinoDataSource.sort("ime");
+        kinoDataSource.load().done(function (popisKina) {
+
+            /*
+            var imena = [];
+            
+            popisKina.forEach(function (kino) {
+                imena.push(kino.ime);
+            });
+            */
+
+            deferred.resolve(popisKina);
+        });
+
+        return deferred.promise();
+    }
+
+    function dohvatiProgram(imeKina) {
+
+
+        var deferred = $.Deferred();
+
+        kinoDataSource.filter("ime", "=", imeKina);
+        kinoDataSource.load().done(function (popisKina) {
+
+            if (popisKina.length != 0) {
+                deferred.resolve(popisKina[0].program);
             }
-        })
-    };
-})();
+
+            deferred.resolve([]);
+        });
+
+        return deferred.promise();
+    }
+
+
+    $.extend(HAVCMobileApp.data, {
+        dohvatiKina: dohvatiKina,
+        dohvatiProgram: dohvatiProgram
+    });
+})
