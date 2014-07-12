@@ -1,0 +1,22 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.30501.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{1B19158F-E398-40A6-8E3B-350508E125F1}") = "HAVCMobileApp", "HAVCMobileApp\HAVCMobileApp.dxjsproj", "{83587EB9-9A9D-4F90-ACE3-2A8A75AED431}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{83587EB9-9A9D-4F90-ACE3-2A8A75AED431}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{83587EB9-9A9D-4F90-ACE3-2A8A75AED431}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{83587EB9-9A9D-4F90-ACE3-2A8A75AED431}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{83587EB9-9A9D-4F90-ACE3-2A8A75AED431}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
