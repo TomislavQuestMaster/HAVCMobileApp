@@ -169,6 +169,7 @@ $(function () {
         spremiKorisnickoIme: spremiKorisnickoIme,
         dohvatiKorisnickoIme: dohvatiKorisnickoIme,
         spremiLozinku: spremiLozinku,
-        dohvatiLozinku: dohvatiLozinku
+        dohvatiLozinku: dohvatiLozinku,
+        zaprimiIzvjestaj: zaprimiIzvjestaj
     });
 })
