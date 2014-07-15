@@ -7,8 +7,8 @@
     var popisKina = ko.observableArray();
     var popisPrograma = ko.observableArray();
 
-    var pocetakPrikazivanja = ko.observable();
-    var krajPrikazivanja = ko.observable();
+    var pocetakPrikazivanja = ko.observable(new Date());
+    var krajPrikazivanja = ko.observable(new Date());
 
     var brojProdanih = ko.observable(0);
     var brojBesplatnih = ko.observable(0);
@@ -17,6 +17,20 @@
     var promet = ko.observable(0);
 
     var spremi = function () {
+
+        HAVCMobileApp.data.zaprimiIzvjestaj({
+            kinoPrikazivac: kinoPrikazivac,
+            kino: kino,
+            tipPrograma: tipPrograma,
+            pocetakPrikazivanja: pocetakPrikazivanja,
+            krajPrikazivanja: krajPrikazivanja,
+            brojProdanih: brojProdanih,
+            brojBesplatnih: brojBesplatnih,
+            brojGledatelja: brojGledatelja,
+            brojProjekcija: brojProjekcija,
+            promet: promet
+        });
+
     }
 
     var dohvatiProgram = function () {
