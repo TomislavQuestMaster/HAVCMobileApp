@@ -70,6 +70,18 @@
     <Content Include="views\about.html" />
     <Content Include="views\blank.html" />
     <Content Include="app.config.js" />
+    <Content Include="views\Modul1.dxview">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="views\Modul1.js">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="views\View1.dxview">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="views\View1.js">
+      <SubType>Content</SubType>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="css\" />
