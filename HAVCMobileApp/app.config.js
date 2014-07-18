@@ -1,4 +1,4 @@
-window.HAVCMobileApp = $.extend(true, window.HAVCMobileApp, {
+﻿window.HAVCMobileApp = $.extend(true, window.HAVCMobileApp, {
   "config": {
     "layoutSet": "navbar",
     "navigation": [
@@ -13,14 +13,9 @@ window.HAVCMobileApp = $.extend(true, window.HAVCMobileApp, {
         "icon": "info"
       },
       {
-        "title": "Modul1",
-        "action": "#Modul1",
-        "icon": "modul1"
-      },
-      {
-        "title": "View1",
-        "action": "#View1",
-        "icon": "view1"
+        "title": "login",
+        "action": "#login",
+        "icon": "login"
       }
     ]
   }

@@ -1,6 +1,13 @@
 ﻿window.HAVCMobileApp = window.HAVCMobileApp || {};
 window.HAVCMobileApp.data = window.HAVCMobileApp.data || {};
 
+
+var localStore = new DevExpress.data.LocalStore({
+    key: "ID",
+    name: "Local",
+    immediate: true
+});
+
 /*
 var context = new DevExpress.data.ODataContext({
     url: "http://services.odata.org/V3/Northwind/Northwind.svc",
@@ -15,7 +22,7 @@ var context = new DevExpress.data.ODataContext({
     }
 });
 */
-
+var izvjestaji = [];
 
 var popisKinoprikazivaca = [
 
@@ -56,6 +63,59 @@ $(function () {
 
     var kinoPrikazivacDataSource = new DevExpress.data.DataSource(popisKinoprikazivaca);
     var kinoDataSource = new DevExpress.data.DataSource(popisKina);
+    var izvjestajiDataSource = new DevExpress.data.DataSource(izvjestaji);
+
+    function spremiKorisnickoIme(ime) {
+
+        localStore.remove(0);
+        localStore.insert({
+            ID: 0,
+            Name: ime
+        });
+    }
+
+    function dohvatiKorisnickoIme() {
+
+        var deferred = $.Deferred();
+
+        localStore.load().done(function (data) {
+
+            if (data[0] == null) {
+                deferred.resolve('');
+            }
+            else {
+                deferred.resolve(data[0].Name);
+            }
+        });
+
+        return deferred.promise();
+    }
+
+    function spremiLozinku(lozinka) {
+
+        localStore.remove(1);
+        localStore.insert({
+            ID: 1,
+            Name: lozinka
+        });
+    }
+
+    function dohvatiLozinku() {
+
+        var deferred = $.Deferred();
+
+        localStore.load().done(function (data) {
+
+            if (data[1] == null) {
+                deferred.resolve('');
+            }
+            else {
+                deferred.resolve(data[1].Name);
+            }
+        });
+
+        return deferred.promise();
+    }
 
     function dohvatiKina(idVlasnika) {
 
@@ -97,9 +157,19 @@ $(function () {
         return deferred.promise();
     }
 
+    function zaprimiIzvjestaj(izvjestaj) {
+
+        izvjestajiDataSource.store.insert(izvjestaj);
+    }
+
 
     $.extend(HAVCMobileApp.data, {
         dohvatiKina: dohvatiKina,
-        dohvatiProgram: dohvatiProgram
+        dohvatiProgram: dohvatiProgram,
+        spremiKorisnickoIme: spremiKorisnickoIme,
+        dohvatiKorisnickoIme: dohvatiKorisnickoIme,
+        spremiLozinku: spremiLozinku,
+        dohvatiLozinku: dohvatiLozinku,
+        zaprimiIzvjestaj: zaprimiIzvjestaj
     });
 })

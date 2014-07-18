@@ -70,16 +70,10 @@
     <Content Include="views\about.html" />
     <Content Include="views\blank.html" />
     <Content Include="app.config.js" />
-    <Content Include="views\Modul1.dxview">
+    <Content Include="views\login\login.dxview">
       <SubType>Content</SubType>
     </Content>
-    <Content Include="views\Modul1.js">
-      <SubType>Content</SubType>
-    </Content>
-    <Content Include="views\View1.dxview">
-      <SubType>Content</SubType>
-    </Content>
-    <Content Include="views\View1.js">
+    <Content Include="views\login\login.js">
       <SubType>Content</SubType>
     </Content>
   </ItemGroup>
@@ -97,6 +91,7 @@
     <Folder Include="layouts\SlideOut\" />
     <Folder Include="layouts\Split\" />
     <Folder Include="views\" />
+    <Folder Include="views\login" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.Common.targets" />
   <Target Name="Build">
