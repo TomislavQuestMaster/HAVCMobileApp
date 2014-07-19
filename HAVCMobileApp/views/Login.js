@@ -1,4 +1,4 @@
-﻿HAVCMobileApp.login = function (params) {
+﻿HAVCMobileApp.Login= function (params) {
 
     var korisnickoIme = ko.observable();
     HAVCMobileApp.data.dohvatiKorisnickoIme().done(function (ime) {
@@ -17,7 +17,7 @@
     }
 
     var prijava = function () {
-        
+
         $.ajax({
             type: "POST",
             url: "http://localhost:8080/login",
@@ -25,7 +25,7 @@
             data: JSON.stringify({
                 korisnik: korisnickoIme(),
                 lozinka: lozinka()
-                }),
+            }),
             crossDomain: true,
             success: uspjesnaPrijava,
             error: neuspjesnaPrijava,
@@ -36,12 +36,12 @@
     var upozorenjeVidljivo = ko.observable(false);
 
     var uspjesnaPrijava = function () {
-        HAVCMobileApp.app.navigate("home");
+        HAVCMobileApp.app.navigate("OdabirModula");
     }
 
     var neuspjesnaPrijava = function () {
         upozorenjeVidljivo(true);
-    }  
+    }
 
     return {
         korisnickoIme: korisnickoIme,

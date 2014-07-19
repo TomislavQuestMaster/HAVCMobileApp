@@ -64,20 +64,30 @@
     <Content Include="js\jquery-1.11.1.min.js" />
     <Content Include="js\jquery-2.1.1.min.js" />
     <Content Include="js\knockout-3.1.0.js" />
-    <Content Include="views\home.dxview" />
     <Content Include="views\home.css" />
-    <Content Include="views\home.js" />
-    <Content Include="views\about.html" />
     <Content Include="views\blank.html" />
     <Content Include="app.config.js" />
-    <Content Include="views\login\login.dxview">
+    <Content Include="views\Login.dxview">
       <SubType>Content</SubType>
     </Content>
-    <Content Include="views\login\login.js">
+    <Content Include="views\Login.js">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="views\Modul1.dxview">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="views\Modul1.js">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="views\OdabirModula.dxview">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="views\OdabirModula.js">
       <SubType>Content</SubType>
     </Content>
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="certificates\" />
     <Folder Include="css\" />
     <Folder Include="data\" />
     <Folder Include="js\" />
@@ -91,7 +101,6 @@
     <Folder Include="layouts\SlideOut\" />
     <Folder Include="layouts\Split\" />
     <Folder Include="views\" />
-    <Folder Include="views\login" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.Common.targets" />
   <Target Name="Build">

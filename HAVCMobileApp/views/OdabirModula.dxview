@@ -1,0 +1,12 @@
+<div data-options="dxView : { name: 'OdabirModula', title: 'OdabirModula' } ">
+    <div data-options="dxContent : { targetPlaceholder: 'content' } ">
+        <p style="padding: 5px">Odaberi modul</p>
+        <div data-bind="dxList: { dataSource: moduli }">
+            <div data-options="dxTemplate : { name: 'item' } " data-bind="dxAction: '#Modul1'">
+                <div data-bind="text: ime">
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -3,19 +3,14 @@
     "layoutSet": "navbar",
     "navigation": [
       {
-        "title": "Home",
-        "action": "#home",
-        "icon": "home"
-      },
-      {
-        "title": "About",
-        "action": "#about",
-        "icon": "info"
-      },
-      {
-        "title": "login",
-        "action": "#login",
+        "title": "Login",
+        "action": "#Login",
         "icon": "login"
+      },
+      {
+        "title": "OdabirModula",
+        "action": "#OdabirModula",
+        "icon": "odabirmodula"
       }
     ]
   }

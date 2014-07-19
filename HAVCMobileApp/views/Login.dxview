@@ -1,0 +1,17 @@
+<div data-options="dxView : { name: 'Login', title: 'Login' } ">
+    <div data-options="dxContent : { targetPlaceholder: 'content' } ">
+        <div class="dx-fieldset contact-block">
+            <div class="dx-field">
+                <div class="dx-field-label">Korisničko ime</div>
+                <div class="dx-field-value" data-bind="dxTextBox: { value:  korisnickoIme}"></div>
+            </div>
+            <div class="dx-field">
+                <div class="dx-field-label">Lozinka</div>
+                <div class="dx-field-value" data-bind="dxTextBox: { mode:'password', value:  lozinka }"></div>
+            </div>
+        </div>
+        <div data-bind="dxButton: { text: 'Login', clickAction: prijava }"></div>
+
+        <div data-bind="dxToast: { visible: upozorenjeVidljivo, message:'Uspiješna prijava' }"></div>
+    </div>
+</div>

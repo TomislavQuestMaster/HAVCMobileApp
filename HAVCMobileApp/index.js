@@ -9,7 +9,7 @@ $(function() {
         layoutSet: DevExpress.framework.html.layoutSets[HAVCMobileApp.config.layoutSet],
         navigation: HAVCMobileApp.config.navigation
     });
-    HAVCMobileApp.app.router.register(":view/:id", { view: "home", id: undefined });
+    HAVCMobileApp.app.router.register(":view/:id", { view: "Login", id: undefined });
 
     HAVCMobileApp.app.navigate();
 });
