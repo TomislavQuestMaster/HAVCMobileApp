@@ -1,8 +1,8 @@
 ﻿HAVCMobileApp.OdabirModula = function (params) {
 
     var mojModuli = [
-        {ime:'modul1'},
-        {ime:'modil2'}
+        {ime:'Unos izvještaja'},
+        {ime:'Nepoznati modul'}
     ]
 
     var moduli = ko.observableArray(mojModuli);

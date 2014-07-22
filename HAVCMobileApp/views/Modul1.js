@@ -16,7 +16,7 @@
     var brojProjekcija = ko.observable(0);
     var promet = ko.observable(0);
 
-    var spremi = function () {
+    var posaljiIzvjestaj = function () {
 
         HAVCMobileApp.data.zaprimiIzvjestaj({
             kinoPrikazivac: kinoPrikazivac,
@@ -30,6 +30,7 @@
             brojProjekcija: brojProjekcija,
             promet: promet
         });
+        HAVCMobileApp.app.navigate("OdabirModula");
 
     }
 
@@ -85,6 +86,6 @@
 
         dohvatiProgram: dohvatiProgram,
         dohvatiPopisKina: dohvatiPopisKina,
-        spremi: spremi
+        posaljiIzvjestaj: posaljiIzvjestaj
     };
 };

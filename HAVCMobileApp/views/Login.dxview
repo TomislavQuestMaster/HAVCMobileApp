@@ -10,7 +10,7 @@
                 <div class="dx-field-value" data-bind="dxTextBox: { mode:'password', value:  lozinka }"></div>
             </div>
         </div>
-        <div data-bind="dxButton: { text: 'Login', clickAction: prijava }"></div>
+        <div data-bind="dxButton: { text: 'Prijava', clickAction: prijava }"></div>
 
         <div data-bind="dxToast: { visible: upozorenjeVidljivo, message:'Uspiješna prijava' }"></div>
     </div>

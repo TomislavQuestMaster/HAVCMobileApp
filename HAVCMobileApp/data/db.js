@@ -159,7 +159,7 @@ $(function () {
 
     function zaprimiIzvjestaj(izvjestaj) {
 
-        izvjestajiDataSource.store.insert(izvjestaj);
+        izvjestajiDataSource.store().insert(izvjestaj);
     }
 
 

@@ -1,4 +1,4 @@
-<div data-options="dxView : { name: 'Modul1', title: 'lalala' } ">
+<div data-options="dxView : { name: 'Modul1', title: 'Izvještaj' } ">
     <div data-options="dxContent : { targetPlaceholder: 'content' } ">
 
         
@@ -47,6 +47,8 @@
                                 <div class="dx-field-label">Promet</div>
                                 <div class="dx-field-value" data-bind="dxNumberBox: { value:  promet }"></div>
                             </div>
+
+                            <div data-bind="dxButton: { text: 'Zaprimi', clickAction: posaljiIzvjestaj }"></div>
                         </div>
                     </div>
                 </div>
